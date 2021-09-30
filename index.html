@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>fungame9</title>
+</head>
+
+<body>
+    <div>
+        <video id="surpriseVideo" preload="auto">
+            <source src="horrible.mp4" type="video/mp4">
+        </video>
+        <div id="surpriseImg"></div>
+        <h3 id="surpriseText1">祝俞蓁</h3>
+        <h2 id="surpriseText2">生日快樂!!!</h2>
+    </div>
+
+    <div class="main-container">
+        <div class="btn_group">
+            <button class="btn" id="rotate" onclick="rotate()">轉</button>
+            <button class="btn" id="reveal" disabled>開</button>
+            <button class="btn right" onclick="change_topic()">換</button>
+        </div>
+        <div class="flex-btw">
+            <div class="board">
+                <div>紅隊：<span class="red">0</span> 分</div>
+                <div>藍隊：<span class="yellow">1</span> 分</div>
+            </div>
+            <div class="round-div"><span class="round">紅隊</span>回合</div>
+        </div>
+        <h3 class="hint">請紅隊出題者按「轉」旋轉轉盤</h3>
+        <div class="flex">
+            <i class="fas fa-long-arrow-alt-left"></i>
+            <i class="fas fa-long-arrow-alt-right"></i>
+        </div>
+        <div class="flex">
+            <h1 class="topic1"></h1>
+            <h1 class="topic2"></h1>
+        </div>
+        <div class="wheel-container">
+            <div id="slider"></div>
+            <div id="range"></div>
+            <div id="spinner"></div>
+            <div id="baffle"></div>
+        </div>
+
+        <div class="float">
+            <label class="container">
+                <input type="radio" name="radio" value="left">
+                <span class="checkmark">左</span>
+            </label>
+
+            <label class="container">
+                <input type="radio" name="radio" value="right">
+                <span class="checkmark">右</span>
+            </label>
+        </div>
+        <button class="float" id="confirm" disabled>確定</button>
+
+        <div class="surprise"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
+    <script src="topic.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

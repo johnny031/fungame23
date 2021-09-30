@@ -1,0 +1,345 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  --deg: -86deg;
+  --handle-length: 206px;
+  --color: #001ba4; /*#001ba4 #b40101*/
+  --bg-color: #f5e2e2; /*#f5e2e2 #e0e6f3*/
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+.topic1,
+.topic2 {
+  font-size: 1.4rem;
+  color: rgb(102, 102, 102);
+  margin-top: 0;
+}
+
+.board,
+.round-div {
+  margin: 0.5rem;
+}
+
+.board {
+  text-shadow: 1px 1px 1px white;
+}
+
+.round-div {
+  font-size: 1.3rem;
+  line-height: 3rem;
+  color: #b40101;
+  text-shadow: 1px 1px 1px rgb(255, 255, 255);
+}
+
+.btn_group {
+  margin: 0.5rem 0.5rem 0.8rem 0.5rem;
+}
+
+.btn {
+  border-radius: 50%;
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+  background-color: rgb(255, 154, 86);
+  color: rgb(250, 250, 250);
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border: none;
+  box-shadow: 2px 4px 1px rgb(241, 115, 31);
+  cursor: pointer;
+}
+
+.right {
+  float: right;
+  margin: 0;
+}
+
+.btn:active {
+  box-shadow: 1px 2px 1px rgb(241, 115, 31);
+}
+
+.btn:disabled {
+  box-shadow: none;
+  background-color: rgb(238, 238, 238);
+  color: rgb(184, 184, 184);
+  font-weight: normal;
+  border: 1px solid rgb(184, 184, 184);
+  cursor: default;
+}
+
+.hint {
+  text-align: center;
+  color: rgb(97, 97, 97);
+  font-weight: normal;
+  margin: 1rem 0.5rem 1.5rem 0.5rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-btw {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fas {
+  font-size: 4rem;
+  transform: scale(1.5, 1);
+  color: rgb(102, 102, 102);
+}
+
+#confirm:disabled {
+  box-shadow: none;
+  background-color: rgb(238, 238, 238);
+  border: 1px solid rgb(184, 184, 184);
+  cursor: default;
+}
+
+#confirm {
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  margin: 3.5em auto;
+  border-radius: 10%;
+  box-shadow: 4px 4px 1px rgb(124, 124, 124);
+  background-color: rgb(209, 209, 209);
+  border: none;
+  cursor: pointer;
+}
+
+#confirm:active {
+  box-shadow: 2px 2px 1px rgb(124, 124, 124);
+}
+
+#slider,
+#range {
+  margin: 0 auto;
+}
+
+#range {
+  transform: translateY(-100%);
+}
+
+#range .rs-range-color {
+  background: conic-gradient(
+    from var(--deg) at 50% 100%,
+    rgb(240, 216, 0) 0deg 5deg,
+    rgb(253, 133, 52) 5deg 14deg,
+    rgb(90, 206, 235) 14deg 23deg,
+    rgb(253, 133, 52) 23deg 32deg,
+    rgb(240, 216, 0) 32deg 50deg
+  );
+}
+
+#range .rs-path-color {
+  background: hsl(0, 0%, 91%);
+}
+
+#slider .rs-handle {
+  background-color: transparent;
+}
+
+#slider .rs-handle:before {
+  display: block;
+  content: " ";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background: black;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 100%;
+}
+
+#slider .rs-handle:after {
+  display: block;
+  content: " ";
+  width: var(--handle-length);
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  border-top: 3px solid black;
+}
+#slider .rs-range-color {
+  background-color: transparent;
+}
+#slider .rs-path-color {
+  background-color: transparent;
+}
+
+.wheel-container {
+  position: relative;
+}
+
+#spinner {
+  display: none;
+  position: absolute;
+  top: calc(var(--handle-length) / 0.687);
+  left: 50%;
+  transform-origin: center;
+  width: calc(2 * var(--handle-length) / 0.687);
+  height: calc(2 * var(--handle-length) / 0.687);
+  background: repeating-conic-gradient(#ffad50 0% 5%, #ff7231 5% 10%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 3;
+  border-radius: 50%;
+  pointer-events: none;
+}
+#baffle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: calc(var(--handle-length) / 0.687);
+  background-color: var(--bg-color);
+  z-index: 3;
+}
+
+.float {
+  position: relative;
+  transform: translateY(calc(-1.3 * var(--handle-length)));
+  display: flex;
+  justify-content: space-around;
+  z-index: 3;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.6rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2em 0.7rem;
+  font-weight: bold;
+  color: var(--color);
+  border: 3px solid var(--color);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: var(--color);
+  color: rgb(243, 243, 243);
+}
+
+.surprise {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  background-color: rgb(179, 179, 179);
+  border-radius: 50%;
+}
+
+#surpriseVideo {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+
+#surpriseImg {
+  display: none;
+  background-image: url("elephant.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+#surpriseText1,
+#surpriseText2 {
+  display: none;
+  font-family: "DFKai-sb";
+  font-size: 3rem;
+  color: rgb(241, 0, 221);
+  text-shadow: 5px 5px 4px rgb(233, 233, 233);
+  position: sticky;
+  z-index: 1001;
+  word-break: keep-all;
+  margin: 8rem auto auto 50%;
+}
+
+#surpriseText2 {
+  color: rgb(226, 0, 0);
+  font-size: 3rem;
+  text-align: center;
+  margin: 3rem auto;
+}
+
+@media only screen and (min-width: 576px) {
+  body {
+    margin: 1rem;
+  }
+  .btn {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+  .btn_group {
+    margin: 0.5rem 0.5rem 1.6rem 0.5rem;
+  }
+  .board,
+  .round-div {
+    font-size: 1.5rem;
+  }
+  .hint {
+    font-size: 1.7rem;
+  }
+  .topic1,
+  .topic2 {
+    font-size: 1.9rem;
+  }
+  .container {
+    font-size: 2.2rem;
+  }
+  #confirm {
+    font-size: 1.7rem;
+  }
+  #surpriseText1 {
+    font-size: 5rem;
+    margin: 8rem auto auto 50%;
+  }
+  #surpriseText2 {
+    font-size: 6rem;
+    margin: 4rem auto;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  body {
+    margin: 2rem 10rem;
+  }
+}
