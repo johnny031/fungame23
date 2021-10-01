@@ -251,6 +251,7 @@ body {
 
 .surprise {
   font-family: "cwTeXKai", serif;
+  font-weight: bold;
   position: absolute;
   right: 0;
   width: 100px;
@@ -258,6 +259,10 @@ body {
   opacity: 0;
   background-color: rgb(179, 179, 179);
   border-radius: 50%;
+  color: var(--bg-color);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #surpriseVideo {
@@ -288,6 +293,7 @@ body {
 #surpriseText2 {
   display: none;
   font-family: "cwTeXKai", serif;
+  font-weight: bold;
   font-size: 3rem;
   color: rgb(241, 0, 221);
   text-shadow: 5px 5px 4px rgb(233, 233, 233);
