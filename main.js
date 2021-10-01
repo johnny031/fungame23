@@ -204,6 +204,9 @@ function happyBirthday() {
             $("#surpriseText1").animate({ marginLeft: "-=30%" })
             $("#surpriseText1").fadeIn()
             $("#surpriseText1").animate({ marginLeft: "+=30%" }, 600)
+
+            $("#surpriseImg").animate({ width: "+=60vw", height: "+=40vh" }, 1400)
+
             setTimeout(() => {
                 $("#surpriseText2").animate({ fontSize: "+=2rem" })
                 $("#surpriseText2").fadeIn()
@@ -215,6 +218,8 @@ function happyBirthday() {
                 $("#surpriseText2").animate({ fontSize: "-=1rem" }, 140)
                 $("#surpriseText2").animate({ fontSize: "+=1rem" }, 140)
                 $("#surpriseText2").animate({ fontSize: "-=1rem" }, 140)
+
+                $("#surpriseImg").animate({ width: "-=60vw", height: "-=40vh" }, 1400)
             }, 1400)
         }, 500)
     }, 3000)

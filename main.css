@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+
 * {
   box-sizing: border-box;
 }
@@ -248,6 +250,7 @@ body {
 }
 
 .surprise {
+  font-family: "cwTeXKai", serif;
   position: absolute;
   right: 0;
   width: 100px;
@@ -284,7 +287,7 @@ body {
 #surpriseText1,
 #surpriseText2 {
   display: none;
-  font-family: "DFKai-sb";
+  font-family: "cwTeXKai", serif;
   font-size: 3rem;
   color: rgb(241, 0, 221);
   text-shadow: 5px 5px 4px rgb(233, 233, 233);
